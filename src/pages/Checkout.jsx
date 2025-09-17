@@ -79,29 +79,35 @@ const handleImageUpload = (e) => {
         formData.append("photo", transferImage);   // الصورة نفسها
         formData.append("caption", caption);       // الرسالة اللي هتظهر مع الصورة
   
-        fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`,{
-            method:'POST',
-            body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
+fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+  method: 'POST',
+  body: formData
+})
+.then(async res => {
+  let data;
+  try {
+    data = await res.json();
+  } catch {
+    data = null; // fallback لو الـ response مش JSON
+  }
 
-          console.log("Telegram response:", data);
+  console.log("Telegram response:", data);
 
-                     // هنا بيرجع الزرار يشتغل تاني
-                     setsendingLoading(false)
-                     toast.success("استلمنا طلبك وبنراجعه في اسرع وقت")
-                     setTimeout(() => {
-                         nav('/')
-                     }, 2000);
+  if (!res.ok || (data && data.ok === false)) {
+    throw new Error(data?.description || "Telegram API error");
+  }
 
-        })
-        .catch(err => {
-          toast.error("حصل خطا تواصل معانا واتساب")
-        }).finally(()=>{
-          setsendingLoading(false)
-        })
-    }
+  toast.success("استلمنا طلبك وبنراجعه في اسرع وقت");
+  setTimeout(() => nav('/'), 2000);
+})
+.catch(err => {
+  console.error("Error sending to Telegram:", err);
+  toast.error("في مشكلة حصلت أثناء استلام الطلب");
+})
+.finally(() => {
+  setsendingLoading(false); // مهم هنا عشان الزرار يتفك في كل الحالات
+});
+
     else if((selectedGame || selectedGame===0) && (selectedPackage || selectedPackage===0)  && phoneNumber && transferImage && data.games[selectedGame].account_type==='Account'){
     setsendingLoading(true)
         
@@ -110,25 +116,35 @@ const handleImageUpload = (e) => {
         formData.append("photo", transferImage);   // الصورة نفسها
         formData.append("caption", caption);       // الرسالة اللي هتظهر مع الصورة
   
-        fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`,{
-            method:'POST',
-            body: formData
-        })
-        .then(res => res.json())
-        .then(data => {
-          console.log("Telegram response:", data);
-        })
-        .catch(err => {
-          console.error("Error sending to Telegram:", err);
-        });
-    }
-    else{
-        toast.error('حط كل المعلومات')
-        console.log('fsdnfefheh')
-    }
-    console.log('fsdnfefheh')
-
+      fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+  method: 'POST',
+  body: formData
+})
+.then(async res => {
+  let data;
+  try {
+    data = await res.json();
+  } catch {
+    data = null; // fallback لو الـ response مش JSON
   }
+
+  console.log("Telegram response:", data);
+
+  if (!res.ok || (data && data.ok === false)) {
+    throw new Error(data?.description || "Telegram API error");
+  }
+
+  toast.success("استلمنا طلبك وبنراجعه في اسرع وقت");
+  setTimeout(() => nav('/'), 2000);
+})
+.catch(err => {
+  console.error("Error sending to Telegram:", err);
+  toast.error("في مشكلة حصلت أثناء استلام الطلب");
+})
+.finally(() => {
+  setsendingLoading(false); // مهم هنا عشان الزرار يتفك في كل الحالات
+});
+
   
   if(isLoading){
     return <><p>loading</p></>
