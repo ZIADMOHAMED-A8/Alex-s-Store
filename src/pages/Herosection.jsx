@@ -1,6 +1,6 @@
 import styles from './Herosection.module.css'
 import pubg from '../assets/pubg.png'
-import cod from '../assets/cod.webp'
+import cod from '../assets/cod.jpg'
 import freefire from '../assets/freefire.png'
  import { useNavigate } from 'react-router-dom';
     
@@ -31,7 +31,7 @@ export default function Herosection() {
                 <div className={styles.buttons2}>
                     
                     <div>Google</div>
-                    <div>Facebook</div>
+                    <div><a style={{textDecoration: "none"}} href="https://www.facebook.com/profile.php?id=100066723254988">Facebook</a></div>
 
                     
                 </div>
@@ -49,7 +49,7 @@ export default function Herosection() {
                     <div style={{cursor:'pointer'}} onClick={()=>{
                         handleClick(3)
                     }} className={styles.card}>
-                    <div className={styles.text}>COD</div>
+                    <div className={styles.text}>TikTok</div>
 
                     <div className={styles.cardimg}>
                             <img src={cod} alt="" />
