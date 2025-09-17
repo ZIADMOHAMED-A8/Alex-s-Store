@@ -218,6 +218,7 @@ const handleImageUpload = (e) => {
   className={styles.fileInput}
   accept="image/*"  
   onChange={handleImageUpload}
+ capture="user" 
 />
                     <label htmlFor="transferImage" className={styles.uploadLabel}>
                       <Upload className={styles.uploadIcon} size={24} />
