@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react'
-import feedback from '../assets/feedback.JPG' 
+import feedback from '../assets/feedback.jpg' 
 import styles from './Ratings.module.css'
 export default function Ratings(){
     let imagesRef=useRef()
