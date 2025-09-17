@@ -158,9 +158,16 @@ const handleImageUpload = (e) => {
                   className={styles.select}
                   value={selectedGame}
                   onChange={(e) => {
-                    console.log(e.target.value)
+                    if(e.target.value==='Select a game')
+                    {
+                    setSelectedGame(null)
 
+                    }
+                    else{
 setSelectedGame(e.target.value)
+
+                    }
+
 }
                     
                   }
