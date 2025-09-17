@@ -4,6 +4,7 @@ import styles from './checkout.module.css';
 import { useGetDataQuery } from '../../dataslice';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import ScrollToTop from '../ScrollToTop.jsx'
 function Checkout ()  {
   const [selectedGame, setSelectedGame] = useState();
   const [playerId, setPlayerId] = useState('');
@@ -133,6 +134,7 @@ const handleImageUpload = (e) => {
   else{
     return (
       <>
+<ScrollToTop />
       <div className={styles.container}>
       <h1>
       حول هنا {data.contact.phone} {data.contact.type}     
