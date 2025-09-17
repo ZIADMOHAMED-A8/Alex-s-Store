@@ -9,6 +9,7 @@ import Ratings from './pages/Rattings'
 import Packages from './pages/Packages'
 import Checkout from './pages/Checkout'
 import Homepage from './pages/Homepage'
+import ScrollToTop from "./ScrollToTop";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 export const router=createBrowserRouter([
@@ -31,6 +32,7 @@ function App() {
   
   return (
     <>
+     <ScrollToTop />
       <RouterProvider router={router}></RouterProvider>
       <ToastContainer />
     </>
