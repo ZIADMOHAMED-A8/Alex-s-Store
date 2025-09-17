@@ -61,89 +61,90 @@ const handleImageUpload = (e) => {
   function sendData(){
     const botToken='8458939895:AAH5YHvfqg9jrU5J03knoQjr2QKJTjPZ0Eg';
     const chatId='936921351';
-  console.log('S')
     let caption = `Game: ${data.games[selectedGame].game_name}
-  type: ${data.games[selectedGame].account_type}
-  player ID: ${playerId}
-  phone number: ${phoneNumber}
-  package: ${data.games[selectedGame].packages[selectedPackage].quantity}
-  price: ${data.games[selectedGame].packages[selectedPackage].price_egp} EGP
-    `;
-  
-    if((selectedGame || selectedGame===0) && (selectedPackage || selectedPackage===0) && playerId && phoneNumber && transferImage && data.games[selectedGame].account_type==='ID'){
-    setsendingLoading(true)
-        
-        // Prepare FormData
-        const formData = new FormData();
-        formData.append("chat_id", chatId);
-        formData.append("photo", transferImage);   // الصورة نفسها
-        formData.append("caption", caption);       // الرسالة اللي هتظهر مع الصورة
-  
-fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
-  method: 'POST',
-  body: formData
-})
-.then(async res => {
-  let data;
-  try {
-    data = await res.json();
-  } catch {
-    data = null; // fallback لو الـ response مش JSON
+type: ${data.games[selectedGame].account_type}
+player ID: ${playerId}
+phone number: ${phoneNumber}
+package: ${data.games[selectedGame].packages[selectedPackage].quantity}
+price: ${data.games[selectedGame].packages[selectedPackage].price_egp} EGP
+  `;
+
+  if ((selectedGame || selectedGame===0) && (selectedPackage || selectedPackage===0) && playerId && phoneNumber && transferImage && data.games[selectedGame].account_type==='ID') {
+    setsendingLoading(true);
+
+    const formData = new FormData();
+    formData.append("chat_id", chatId);
+    formData.append("photo", transferImage);
+    formData.append("caption", caption);
+
+    fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+      method: 'POST',
+      body: formData
+    })
+    .then(async res => {
+      let result;
+      try {
+        result = await res.json();
+      } catch {
+        result = null;
+      }
+      console.log("Telegram response:", result);
+
+      if (!res.ok || (result && result.ok === false)) {
+        throw new Error(result?.description || "Telegram API error");
+      }
+
+      toast.success("استلمنا طلبك وبنراجعه في اسرع وقت");
+      setTimeout(() => nav('/'), 2000);
+    })
+    .catch(err => {
+      console.error("Error sending to Telegram:", err);
+      toast.error("في مشكلة حصلت أثناء استلام الطلب");
+    })
+    .finally(() => {
+      setsendingLoading(false);
+    });
+
+  } else if ((selectedGame || selectedGame===0) && (selectedPackage || selectedPackage===0) && phoneNumber && transferImage && data.games[selectedGame].account_type==='Account') {
+    setsendingLoading(true);
+
+    const formData = new FormData();
+    formData.append("chat_id", chatId);
+    formData.append("photo", transferImage);
+    formData.append("caption", caption);
+
+    fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+      method: 'POST',
+      body: formData
+    })
+    .then(async res => {
+      let result;
+      try {
+        result = await res.json();
+      } catch {
+        result = null;
+      }
+      console.log("Telegram response:", result);
+
+      if (!res.ok || (result && result.ok === false)) {
+        throw new Error(result?.description || "Telegram API error");
+      }
+
+      toast.success("استلمنا طلبك وبنراجعه في اسرع وقت");
+      setTimeout(() => nav('/'), 2000);
+    })
+    .catch(err => {
+      console.error("Error sending to Telegram:", err);
+      toast.error("في مشكلة حصلت أثناء استلام الطلب");
+    })
+    .finally(() => {
+      setsendingLoading(false);
+    });
+
+  } else {
+    toast.error("حط كل المعلومات");
   }
-
-  console.log("Telegram response:", data);
-
-  if (!res.ok || (data && data.ok === false)) {
-    throw new Error(data?.description || "Telegram API error");
-  }
-
-  toast.success("استلمنا طلبك وبنراجعه في اسرع وقت");
-  setTimeout(() => nav('/'), 2000);
-})
-.catch(err => {
-  console.error("Error sending to Telegram:", err);
-  toast.error("في مشكلة حصلت أثناء استلام الطلب");
-})
-.finally(() => {
-  setsendingLoading(false); // مهم هنا عشان الزرار يتفك في كل الحالات
-});
-
-    else if((selectedGame || selectedGame===0) && (selectedPackage || selectedPackage===0)  && phoneNumber && transferImage && data.games[selectedGame].account_type==='Account'){
-    setsendingLoading(true)
-        
-        const formData = new FormData();
-        formData.append("chat_id", chatId);
-        formData.append("photo", transferImage);   // الصورة نفسها
-        formData.append("caption", caption);       // الرسالة اللي هتظهر مع الصورة
-  
-      fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
-  method: 'POST',
-  body: formData
-})
-.then(async res => {
-  let data;
-  try {
-    data = await res.json();
-  } catch {
-    data = null; // fallback لو الـ response مش JSON
-  }
-
-  console.log("Telegram response:", data);
-
-  if (!res.ok || (data && data.ok === false)) {
-    throw new Error(data?.description || "Telegram API error");
-  }
-
-  toast.success("استلمنا طلبك وبنراجعه في اسرع وقت");
-  setTimeout(() => nav('/'), 2000);
-})
-.catch(err => {
-  console.error("Error sending to Telegram:", err);
-  toast.error("في مشكلة حصلت أثناء استلام الطلب");
-})
-.finally(() => {
-  setsendingLoading(false); // مهم هنا عشان الزرار يتفك في كل الحالات
-});
+}
 
   
   if(isLoading){
