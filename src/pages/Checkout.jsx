@@ -23,19 +23,34 @@ function Checkout ()  {
 
   },[])
   // Handle image upload
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setTransferImage(file);
-      
-      // Create preview URL
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setImagePreview(e.target.result);
-      };
-      reader.readAsDataURL(file);
+const handleImageUpload = (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    // تحقق من نوع الملف
+    if (!file.type.startsWith('image/')) {
+      toast.error('من فضلك اختر صورة صحيحة');
+      return;
     }
-  };
+
+    // تحقق من حجم الملف (مثلاً 10MB)
+    if (file.size > 10 * 1024 * 1024) {
+      toast.error('حجم الصورة كبير جداً');
+      return;
+    }
+
+    setTransferImage(file);
+    
+    // Create preview URL
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setImagePreview(e.target.result);
+    };
+    reader.onerror = () => {
+      toast.error('حدث خطأ في قراءة الصورة');
+    };
+    reader.readAsDataURL(file);
+  }
+};
   
   // Remove uploaded image
   const removeImage = () => {
@@ -197,12 +212,14 @@ function Checkout ()  {
               <div className={styles.imageUploadSection}>
                 {!imagePreview ? (
                   <div className={styles.uploadArea}>
-                    <input
-                      type="file"
-                      id="transferImage"
-                      className={styles.fileInput}
-                      onChange={handleImageUpload}
-                    />
+<input
+  type="file"
+  id="transferImage"
+  className={styles.fileInput}
+  accept="image/*"  
+  capture="environment"  
+  onChange={handleImageUpload}
+/>
                     <label htmlFor="transferImage" className={styles.uploadLabel}>
                       <Upload className={styles.uploadIcon} size={24} />
                       <span className={styles.uploadText}>
