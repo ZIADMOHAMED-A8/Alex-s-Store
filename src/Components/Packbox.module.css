@@ -1,0 +1,27 @@
+.Packbox{
+    padding: 10px;
+    border: 1px solid #003061;
+    flex-basis: calc(25% - 15px);
+    border-radius: 12px;
+    padding-bottom: 30px;
+    flex-shrink: 0;
+}
+
+button{
+    padding: 12px;
+    border-radius: 12px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    background-color: #00c2ff;
+
+}
+@media (max-width:768px) {
+    .Packbox{
+    text-align: center;
+    }}
+    @media (max-width:991px) {
+        .Packbox{
+            flex-basis: calc(50% - 15px);
+
+        }}

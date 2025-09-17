@@ -1,0 +1,29 @@
+.images{
+    display: flex;
+    gap:30px;
+    overflow: hidden;
+}
+.image{
+    /* flex-basis: 31%; */
+    flex-basis: calc(33.4% - 30px);
+
+    flex-shrink: 0;
+}
+@media (max-width:978px) {
+.image{
+    flex-basis: calc(50% - 30px);
+}
+}
+@media (max-width:500px) {
+    .image{
+        flex-basis: calc(100% - 30px);
+    }
+    .images{
+        justify-content: center;
+    }
+    }
+.image img{
+    max-width: 100%;
+    border-radius: 6px;
+
+}

@@ -1,0 +1,15 @@
+p{
+    color:gray
+}
+@media (max-width:768px) {
+.packboxes{
+    
+        flex-direction: column;
+    }
+    }
+.packboxes{
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    overflow: hidden;
+}

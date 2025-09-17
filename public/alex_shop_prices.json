@@ -1,0 +1,72 @@
+{
+  "shop_name": "Alex Shop",
+  "contact": {
+    "phone": "01142077268",
+    "type":  " انستا باي ",
+    
+    "whatsapp": "01142077268",
+    "additional": "01011953862"
+  },
+  "games": [
+    {
+      "game_name": "Free Fire",
+      "currency_type": "Diamonds",
+      "account_type": "ID",
+      "packages": [
+        { "quantity": "110 Diamonds", "price_egp": 60 },
+        { "quantity": "231 Diamonds", "price_egp": 110 },
+        { "quantity": "341 Diamonds", "price_egp": 150 },
+        { "quantity": "583 Diamonds", "price_egp": 250 },
+        { "quantity": "1045 Diamonds", "price_egp": 480 },
+        { "quantity": "2000 Diamonds", "price_egp": 860 },
+        { "quantity": "5000 Diamonds", "price_egp": 2150 },
+        { "quantity": "عضوية اسبوعية", "price_egp": 100 },
+        { "quantity": "عضوية شهرية", "price_egp": 290 }
+      ]
+    },
+    {
+      "game_name": "PUBG Mobile",
+      "currency_type": "UC",
+      "account_type": "ID",
+      "packages": [
+        { "quantity": "60 UC", "price_egp": 55 },
+        { "quantity": "325 UC", "price_egp": 230 },
+        { "quantity": "660 UC", "price_egp": 460 },
+        { "quantity": "1800 UC", "price_egp": 1150 },
+        { "quantity": "3850 UC", "price_egp": 2250 },
+        { "quantity": "8100 UC", "price_egp": 4400 }
+      ]
+    },
+    {
+      "game_name": "PUBG Mobile",
+      "currency_type": "UC",
+      "account_type": "Account",
+      "packages": [
+        { "quantity": "60 UC", "price_egp": 50 },
+        { "quantity": "325 UC", "price_egp": 200 },
+        { "quantity": "660 UC", "price_egp": 400 },
+        { "quantity": "1800 UC", "price_egp": 1000 },
+        { "quantity": "3850 UC", "price_egp": 1900 },
+        { "quantity": "8100 UC", "price_egp": 3850 }
+      ]
+    },
+    {
+      "game_name": "TikTok",
+      "currency_type": "Coins",
+      "account_type": "Account",
+      "packages": [
+        { "quantity": "225 Coins", "price_egp": 350 },
+        { "quantity": "700 Coins", "price_egp": 450 },
+        { "quantity": "1050 Coins", "price_egp": 650 },
+        { "quantity": "2100 Coins", "price_egp": 1275 },
+        { "quantity": "3500 Coins", "price_egp": 2200 },
+        { "quantity": "7000 Coins", "price_egp": 4300 }
+      ]
+    }
+  ],
+  "additional_info": {
+    "currency": "EGP",
+    "payment_methods": ["WhatsApp", "Phone"],
+    "services": ["شحن جواهر", "مربع مايز ID", "اسرع شحنة في مصر"]
+  }
+}

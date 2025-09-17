@@ -1,0 +1,115 @@
+.hero_section{
+    background: linear-gradient(135deg, #0f172a 0%,  #0a1f14 100%);
+    padding: 50px 0px;
+    border-top: 1px solid #003061;
+}
+.hero_section p{
+    padding-left: 5px;
+}
+
+.hero_section h1{
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 2.5rem; /* أو 40px */
+    font-weight: 800; /* أو bold */
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 0px;
+    letter-spacing: -0.025em; /* تقريب الحروف شوية */
+}
+.test{
+    display: flex;
+    gap:10px;
+    margin-bottom: 20px;
+}
+.test span{
+    background-color: #0f172a;
+    padding: 5px;
+    border-radius: 5px;
+}
+.buttons{
+    display: flex;
+    gap:10px    ;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.buttons2{
+    display: flex;
+    gap:10px    ;
+    align-items: center;
+}
+.buttons span:nth-child(1){
+background-color: #00C2FF;
+color: black;
+padding: 10px 20px;
+border-radius: 10px;
+font-weight: bold;
+}
+.buttons span:nth-child(2){
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    }
+    .buttons2 div{
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+        padding: 10px 70px;
+        border-radius: 10px;
+        font-weight: bold;
+        }
+.cards{
+    flex:2;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+    font-weight: bold;
+}
+.card{
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap:0px;
+    border: 1px solid #052f5c;
+    border-radius: 14px;
+}
+.card .cardimg{
+    width: 100px;
+    height: 150px;
+}
+.card .cardimg img{
+    max-width: 100%;
+    max-height: 100%;
+}
+@media (max-width:991px) {
+    #cont{
+        flex-direction: column;
+        gap:10px;
+    }
+    .cards{
+        flex-direction: column;
+    }
+    .halfHero{
+        margin: 0 auto;
+    }
+    .buttons{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .buttons2{
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+    @media (max-width:768px) {
+    .buttons2 div{
+        padding: 10px 50px;
+    }
+.hero_section{
+    padding: 20px 0px;
+}
+    }

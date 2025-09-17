@@ -1,0 +1,95 @@
+/* الأساسيات */
+body {
+    font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+    background-color: #0a0f14; /* لون الخلفية الغامق */
+    color: #e5e7eb; /* لون النص الفاتح */
+    margin: 0px;
+  }
+  ul{
+    list-style: none;
+    display: flex;
+    gap:50px
+}
+li{
+    list-style: none;
+
+}
+  .Header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+  /* اللوجو */
+
+  .logo {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #3b82f6; /* أزرق فاتح */
+    display: flex;
+    align-items: center;    
+    gap: 4px;
+  }
+  
+  /* اللينكات */
+  .nav_link {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4c79a5;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .nav_link:hover {
+    color: #fff;
+    background-color: rgba(59, 130, 246, 0.1); /* أزرق شفاف */
+  }
+  
+  /* اللينك النشط */
+  .nav_link.active {
+    color: #fff;
+    background-color: rgba(59, 130, 246, 0.15);
+  }
+  .Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a0f14;
+    padding: 12px 24px;
+    color: #e5e7eb;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #3b82f6;
+    gap: 6px;
+    align-items: center;
+  }
+  
+  .logo i {
+    font-size: 1.2rem;
+    color: #3b82f6;
+    
+}
+.sidebar{
+  z-index: 4;
+    position: fixed;
+    height: 100%;
+    width: 40%;
+    background-color: black;
+    right:-40%;
+    transition: 0.2s;
+    top:0px;
+    padding-top:20px;
+    display: flex;
+    flex-direction: column;
+    gap:20px
+    }
+.sidebar li{
+    color:white
+    
+}
