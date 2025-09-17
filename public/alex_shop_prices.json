@@ -2,7 +2,7 @@
   "shop_name": "Alex Shop",
   "contact": {
     "phone": "alex1911",
-    "type":  " اانستا باي ",
+    "type":  " انستا باي ",
     
     "whatsapp": "01142077268",
     "additional": "01011953862"
@@ -43,10 +43,10 @@
       "account_type": "Account",
       "packages": [
         { "quantity": "60 UC", "price_egp": 50 },
-        { "quantity": "325 UC", "price_egp": 200 },
-        { "quantity": "660 UC", "price_egp": 400 },
-        { "quantity": "1800 UC", "price_egp": 1000 },
-        { "quantity": "3850 UC", "price_egp": 1900 },
+        { "quantity": "325 UC", "price_egp": 220 },
+        { "quantity": "660 UC", "price_egp": 420 },
+        { "quantity": "1800 UC", "price_egp": 1050 },
+        { "quantity": "3850 UC", "price_egp": 1950 },
         { "quantity": "8100 UC", "price_egp": 3850 }
       ]
     },
@@ -55,7 +55,7 @@
       "currency_type": "Coins",
       "account_type": "Account",
       "packages": [
-        { "quantity": "225 Coins", "price_egp": 350 },
+        { "quantity": "350 Coins", "price_egp": 225 },
         { "quantity": "700 Coins", "price_egp": 450 },
         { "quantity": "1050 Coins", "price_egp": 650 },
         { "quantity": "2100 Coins", "price_egp": 1275 },
