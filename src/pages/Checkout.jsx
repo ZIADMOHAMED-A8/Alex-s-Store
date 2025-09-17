@@ -201,7 +201,6 @@ function Checkout ()  {
                       type="file"
                       id="transferImage"
                       className={styles.fileInput}
-                      accept="image/*"
                       onChange={handleImageUpload}
                     />
                     <label htmlFor="transferImage" className={styles.uploadLabel}>
