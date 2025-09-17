@@ -217,7 +217,6 @@ const handleImageUpload = (e) => {
   id="transferImage"
   className={styles.fileInput}
   accept="image/*"  
-  capture="environment"  
   onChange={handleImageUpload}
 />
                     <label htmlFor="transferImage" className={styles.uploadLabel}>
