@@ -2,10 +2,14 @@ import styles from './Herosection.module.css'
 import pubg from '../assets/pubg.png'
 import cod from '../assets/cod.webp'
 import freefire from '../assets/freefire.png'
-
+ import { useNavigate } from 'react-router-dom';
     
 
 export default function Herosection() {
+    let nav=useNavigate();
+    function handleClick(ind){
+        nav(`/checkout/${ind}/3`)
+    }
     return (
         <div className={styles.hero_section}>
             <div className="container {styles.a7a}" id={styles.cont}  style={{display:'flex',justifyContent:'space-between'}}>
@@ -33,14 +37,18 @@ export default function Herosection() {
                 </div>
                 </div>
                 <div className={styles.cards}>
-                    <div className={styles.card}>
+                    <div style={{cursor:'pointer'}} onClick={()=>{
+                        handleClick(1)
+                    }} className={styles.card}>
                         <div className={styles.text}>Pubg Mobile</div>
                         <div className={styles.cardimg}>
                             <img src={pubg} alt="" />
                         </div>
 
                     </div>
-                    <div className={styles.card}>
+                    <div style={{cursor:'pointer'}} onClick={()=>{
+                        handleClick(3)
+                    }} className={styles.card}>
                     <div className={styles.text}>COD</div>
 
                     <div className={styles.cardimg}>
@@ -48,7 +56,9 @@ export default function Herosection() {
 
                             </div>
                             </div>
-                        <div className={styles.card}>
+                        <div style={{cursor:'pointer'}} onClick={()=>{
+                        handleClick(0)
+                    }} className={styles.card}>
                         <div className={styles.text}>free fire</div>
 
                         <div className={styles.cardimg}>
