@@ -32,8 +32,9 @@ function App() {
   
   return (
     <>
-     <ScrollToTop />
+
       <RouterProvider router={router}></RouterProvider>
+     <ScrollToTop />
       <ToastContainer />
     </>
   )
