@@ -162,7 +162,7 @@ setSelectedGame(e.target.value)
                     
                   }
                 >
-                  <option value=undefined>Select a game</option>
+                  <option value={undefined}>Select a game</option>
                   {data.games.map((item,index)=>
                   <option key={index} value={index}>{item.game_name} / {item.account_type} </option>
                   )}
