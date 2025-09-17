@@ -97,8 +97,10 @@ const handleImageUpload = (e) => {
 
         })
         .catch(err => {
-          console.error("Error sending to Telegram:", err);
-        });
+          toast.error("حصل خطا تواصل معانا واتساب")
+        }).finally(()=>{
+          setsendingLoading(false)
+        })
     }
     else if((selectedGame || selectedGame===0) && (selectedPackage || selectedPackage===0)  && phoneNumber && transferImage && data.games[selectedGame].account_type==='Account'){
     setsendingLoading(true)
