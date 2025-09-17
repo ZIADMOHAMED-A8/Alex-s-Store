@@ -34,7 +34,6 @@ function App() {
     <>
 
       <RouterProvider router={router}></RouterProvider>
-     <ScrollToTop />
       <ToastContainer />
     </>
   )
