@@ -157,7 +157,7 @@ const handleImageUpload = (e) => {
                 <select 
                   className={styles.select}
                   value={selectedGame}
-                  onChange={(e) => {
+                  onChange={(e) => 
 setSelectedGame(e.target.value)
                     
                   }
