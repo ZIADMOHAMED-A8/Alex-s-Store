@@ -30,7 +30,7 @@ scroll-snap-align: center;
 
 }
 .sliderWrapper {
-  padding: 50px 0;
+  padding: 50px ;
   background: linear-gradient(135deg, #0f172a 0%, #0a1f14 100%);
 }
 
