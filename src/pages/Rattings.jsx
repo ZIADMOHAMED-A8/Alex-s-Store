@@ -8,11 +8,13 @@ import feedback5 from '../assets/feedback (5).jpg'
 import feedback6 from '../assets/feedback (6).jpg'
 import feedback7 from '../assets/feedback (7).jpg'
 import feedback8 from '../assets/feedback (8).jpg'
-
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import styles from './Ratings.module.css'
 
 export default function Ratings(){
-    const imagesRef = useRef()
+   
 
     const feedbackImages = [
       feedback,
@@ -25,48 +27,27 @@ export default function Ratings(){
       feedback7,
       feedback8
     ]
+ const settings = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      { breakpoint: 978, settings: { slidesToShow: 2 } },
+      { breakpoint: 500, settings: { slidesToShow: 1 } }
+    ]
+  }
 
-   useEffect(() => {
-    const container = imagesRef.current
-    if (!container) return
-
-    // ابدأ من أول صورة
-    container.scrollTo({ left: 0, behavior: 'auto' })
-
-    const interval = setInterval(() => {
-        const firstChild = container.querySelector(`.${styles.image}`)
-        if (!firstChild) return
-
-        const step = firstChild.offsetWidth + 30 // حجم الصورة + المسافة بين الصور
-        container.scrollBy({
-            left: step,
-            behavior: 'smooth'
-        })
-
-        // لو وصلنا لنص الصور (النسخة الأولى خلصت)
-        if (container.scrollLeft >= container.scrollWidth / 2) {
-            container.scrollTo({ left: 0, behavior: 'auto' })
-        }
-    }, 2000)
-
-    return () => clearInterval(interval)
-}, [])
-
-    return (
-        <div style={{
-            background: 'linear-gradient(135deg, #0f172a 0%,  #0a1f14 100%)',
-            padding: '50px 0px'
-        }}>
-            <div className="container">
-                <h1>What our customers say</h1>
-                <div ref={imagesRef} className={styles.images}>
-                    {[...feedbackImages, ...feedbackImages].map((item, index) => (
-                        <div key={index} className={styles.image}>
-                            <img src={item} alt={`feedback-${index}`} />
-                        </div>
-                    ))}
-                </div>
-            </div>
+  return (
+    <Slider {...settings}>
+      {feedbackImages.map((item, i) => (
+        <div key={i}>
+          <img src={item} alt={`feedback-${i}`} />
         </div>
-    )
+      ))}
+    </Slider>
+  )
+}
+   
 }
