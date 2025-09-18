@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react'
 import feedback from '../assets/feedback.jpg' 
-import feedback1 from '../assets/feedback (1).jpg'
+import feedback1 from '../assets/feedback(1).jpg'
 import feedback2 from '../assets/feedback (2).jpg'
 import feedback3 from '../assets/feedback (3).jpg'
 import feedback4 from '../assets/feedback (4).jpg'
