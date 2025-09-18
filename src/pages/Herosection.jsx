@@ -24,7 +24,7 @@ export default function Herosection() {
                 <div className={styles.buttons}>
                     
                     <span>Top-Up Now</span>
-                    <span onClick={()=>{
+                    <span style={{cursor:'pointer'}} onClick={()=>{
                     nav('checkout/1/3')
                   }}>View Packages</span>
 
