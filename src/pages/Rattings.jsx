@@ -9,9 +9,7 @@ import feedback5 from '../assets/feedback (5).jpg'
 import feedback6 from '../assets/feedback (6).jpg'
 import feedback7 from '../assets/feedback (7).jpg'
 import feedback8 from '../assets/feedback (8).jpg'
-import feedback9 from '../assets/feedback (9).jpg'
-import feedback10 from '../assets/feedback (10).jpg'
-import feedback11 from '../assets/feedback (11).jpg'
+
 
 
 
@@ -49,10 +47,7 @@ const feedbackImages = [
   feedback5,
   feedback6,
   feedback7,
-  feedback8,
-  feedback9,
-  feedback10,
-  feedback11
+  feedback8
 ]
     return (
         <div style={{    background:' linear-gradient(135deg, #0f172a 0%,  #0a1f14 100%)'
