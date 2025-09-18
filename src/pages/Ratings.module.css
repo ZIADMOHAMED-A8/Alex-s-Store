@@ -33,7 +33,11 @@ scroll-snap-align: center;
   padding: 50px ;
   background: linear-gradient(135deg, #0f172a 0%, #0a1f14 100%);
 }
-
+@media(max-width:791px){
+    .sliderWrapper {
+        padding:0px
+    }
+}
 .slide {
   padding: 0 10px;
 }
