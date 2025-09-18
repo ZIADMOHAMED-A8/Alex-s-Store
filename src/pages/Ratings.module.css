@@ -8,7 +8,7 @@
 .image{
     /* flex-basis: 31%; */
     flex-basis: calc(33.4% - 30px);
-scroll-snap-align: start;
+scroll-snap-align: center;
     flex-shrink: 0;
 }
 @media (max-width:978px) {
