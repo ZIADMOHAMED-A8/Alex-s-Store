@@ -1,6 +1,22 @@
 
 import { useEffect, useRef } from 'react'
 import feedback from '../assets/feedback.jpg' 
+import feedback1 from '../assets/feedback (1).jpg'
+import feedback2 from '../assets/feedback (2).jpg'
+import feedback3 from '../assets/feedback (3).jpg'
+import feedback4 from '../assets/feedback (4).jpg'
+import feedback5 from '../assets/feedback (5).jpg'
+import feedback6 from '../assets/feedback (6).jpg'
+import feedback7 from '../assets/feedback (7).jpg'
+import feedback8 from '../assets/feedback (8).jpg'
+import feedback9 from '../assets/feedback (9).jpg'
+import feedback10 from '../assets/feedback (10).jpg'
+import feedback11 from '../assets/feedback (11).jpg'
+
+
+
+
+
 import styles from './Ratings.module.css'
 export default function Ratings(){
     let imagesRef=useRef()
@@ -18,13 +34,26 @@ export default function Ratings(){
             // لو وصل للآخر، رجعه من الأول
             if (container.scrollLeft + container.offsetWidth >= container.scrollWidth) {
                 setTimeout(() => {
-                    container.scrollTo({ left: 0, behavior: 'smooth' })
+                    container.scrollTo({ left: 0, behavior: 'auto' })
                 }, 600) // نخليها بعد الانيميشن يخلص
             }
         }, 2000)
 
         return () => clearInterval(interval) // تنظيف
     }, [])
+const feedbackImages = [
+  feedback1,
+  feedback2,
+  feedback3,
+  feedback4,
+  feedback5,
+  feedback6,
+  feedback7,
+  feedback8,
+  feedback9,
+  feedback10,
+  feedback11
+]
     return (
         <div style={{    background:' linear-gradient(135deg, #0f172a 0%,  #0a1f14 100%)'
             ,padding:'50px 0px'}}>
@@ -34,24 +63,12 @@ export default function Ratings(){
             <div className={styles.image}>
             <img src={feedback} alt="" />
             </div>
-            <div className={styles.image}>
-            <img src={feedback} alt="" />
+                {feedbackImages.map((item)=>
+                        <div className={styles.image}>
+            <img src={item} alt="" />
             </div>
-            <div className={styles.image}>
-            <img src={feedback} alt="" />
-            </div>
-            <div className={styles.image}>
-            <img src={feedback} alt="" />
-            </div>
-            <div className={styles.image}>
-            <img src={feedback} alt="" />
-            </div>
-            <div className={styles.image}>
-            <img src={feedback} alt="" />
-            </div>
-            <div className={styles.image}>
-            <img src={feedback} alt="" />
-            </div>
+                )}
+                
             </div>
         </div>
         </div>
