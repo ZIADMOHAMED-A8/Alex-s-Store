@@ -26,25 +26,31 @@ export default function Ratings(){
       feedback8
     ]
 
-    useEffect(() => {
-        const container = imagesRef.current
-        if (!container) return
+   useEffect(() => {
+    const container = imagesRef.current
+    if (!container) return
 
-        const interval = setInterval(() => {
-            let space = window.innerWidth > 978 ? 0.334 : window.innerWidth <= 500 ? 1 : 0.5
-            container.scrollBy({
-                left: container.offsetWidth * space,
-                behavior: 'smooth'
-            })
+    // ابدأ من أول صورة
+    container.scrollTo({ left: 0, behavior: 'auto' })
 
-            // لو قربنا من نص الصور (النص التاني هو النسخة المكررة)
-            if (container.scrollLeft >= container.scrollWidth / 2) {
-                container.scrollTo({ left: 0, behavior: 'auto' }) 
-            }
-        }, 2000)
+    const interval = setInterval(() => {
+        const firstChild = container.querySelector(`.${styles.image}`)
+        if (!firstChild) return
 
-        return () => clearInterval(interval)
-    }, [])
+        const step = firstChild.offsetWidth + 30 // حجم الصورة + المسافة بين الصور
+        container.scrollBy({
+            left: step,
+            behavior: 'smooth'
+        })
+
+        // لو وصلنا لنص الصور (النسخة الأولى خلصت)
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+            container.scrollTo({ left: 0, behavior: 'auto' })
+        }
+    }, 2000)
+
+    return () => clearInterval(interval)
+}, [])
 
     return (
         <div style={{
