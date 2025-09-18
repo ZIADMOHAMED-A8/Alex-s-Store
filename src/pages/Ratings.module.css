@@ -2,6 +2,7 @@
     display: flex;
     gap:30px;
     overflow: hidden;
+    align-items: center;
 }
 .image{
     /* flex-basis: 31%; */
