@@ -288,7 +288,7 @@ setSelectedGame(e.target.value)
               <span className={styles.deliveryText}>Average delivery time: under 2 minutes.</span>
             </div>
 
-            <button onClick={sendData}  className={`${styles.payButton} ${sendingLoading ? styles.disabled : ''}`}>
+            <button onClick={sendData} disabled={sendingLoading} className={`${styles.payButton} ${sendingLoading ? styles.disabled : ''}`}>
               <Shield size={20} />
               Submit Order
             </button>
