@@ -29,3 +29,16 @@ scroll-snap-align: center;
     border-radius: 6px;
 
 }
+.sliderWrapper {
+  padding: 50px 0;
+  background: linear-gradient(135deg, #0f172a 0%, #0a1f14 100%);
+}
+
+.slide {
+  padding: 0 10px;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 6px;
+}
