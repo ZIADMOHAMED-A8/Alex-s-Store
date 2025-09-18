@@ -3,11 +3,12 @@
     gap:30px;
     overflow: hidden;
     align-items: center;
+    scroll-snap-type: x mandatory;
 }
 .image{
     /* flex-basis: 31%; */
     flex-basis: calc(33.4% - 30px);
-
+scroll-snap-align: start;
     flex-shrink: 0;
 }
 @media (max-width:978px) {
