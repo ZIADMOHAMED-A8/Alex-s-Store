@@ -68,7 +68,7 @@ export default function Header() {
                         nav('/checkout/1/0')
                         console.log('s')
                     }} className={styles.nav_link}>Services</li>
-                                <li className={styles.nav_link}><a style={{textDecoration: "none",color:'white'}} href="https://www.facebook.com/profile.php?id=100066723254988">Contact Us</a></li>
+                                <li className={styles.nav_link}><a style={{textDecoration: "none",color:'#4c79a5'}} href="https://www.facebook.com/profile.php?id=100066723254988">Contact Us</a></li>
                             </>
                             :
                             <i 
