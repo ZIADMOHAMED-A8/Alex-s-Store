@@ -67,8 +67,6 @@ button:focus-visible {
   }
 } */
 .slick-track{
-display: flex
-      align-items: center;
-    
-;
+display: flex;
+align-items: center;
 }
