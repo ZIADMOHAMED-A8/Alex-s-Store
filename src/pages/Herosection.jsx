@@ -30,8 +30,8 @@ export default function Herosection() {
                 </div>
                 <div className={styles.buttons2}>
                     
-                    <div>Google</div>
-                    <div><a style={{textDecoration: "none",color:'white'}} href="https://www.facebook.com/profile.php?id=100066723254988">Facebook</a></div>
+                    <div><a style={{textDecoration: "none",color:'green'}} href="https://www.facebook.com/profile.php?id=100066723254988">Facebook</a></div>
+                    <div><a style={{textDecoration: "none",color:'blue'}} href="https://whatsapp.com/channel/0029VbAb7hgJuyA8QZxqRp2b">Whatsapp</a></div>
 
                     
                 </div>
