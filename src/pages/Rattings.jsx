@@ -8,31 +8,33 @@ import feedback5 from '../assets/feedback (5).jpg'
 import feedback6 from '../assets/feedback (6).jpg'
 import feedback7 from '../assets/feedback (7).jpg'
 import feedback8 from '../assets/feedback (8).jpg'
+
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+
 import styles from './Ratings.module.css'
 
-export default function Ratings(){
-   
+export default function Ratings() {
+  const feedbackImages = [
+    feedback,
+    feedback1,
+    feedback2,
+    feedback3,
+    feedback4,
+    feedback5,
+    feedback6,
+    feedback7,
+    feedback8
+  ]
 
-    const feedbackImages = [
-      feedback,
-      feedback1,
-      feedback2,
-      feedback3,
-      feedback4,
-      feedback5,
-      feedback6,
-      feedback7,
-      feedback8
-    ]
- const settings = {
+  const settings = {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
     slidesToShow: 3,
     slidesToScroll: 1,
+    arrows: false, // لو مش عايز السهمين
     responsive: [
       { breakpoint: 978, settings: { slidesToShow: 2 } },
       { breakpoint: 500, settings: { slidesToShow: 1 } }
@@ -40,14 +42,15 @@ export default function Ratings(){
   }
 
   return (
-    <Slider {...settings}>
-      {feedbackImages.map((item, i) => (
-        <div key={i}>
-          <img src={item} alt={`feedback-${i}`} />
-        </div>
-      ))}
-    </Slider>
+    <div className={styles.sliderWrapper}>
+      <h1>What our customers say</h1>
+      <Slider {...settings}>
+        {feedbackImages.map((item, i) => (
+          <div key={i} className={styles.slide}>
+            <img src={item} alt={`feedback-${i}`} />
+          </div>
+        ))}
+      </Slider>
+    </div>
   )
-}
-   
 }
