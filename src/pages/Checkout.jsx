@@ -102,7 +102,7 @@ price: ${data.games[selectedGame].packages[selectedPackage].price_egp} EGP
       toast.error("في مشكلة حصلت أثناء استلام الطلب");
     })
     .finally(() => {
-      setsendingLoading(false);
+      ;
     });
 
   } else if ((selectedGame || selectedGame===0) && (selectedPackage || selectedPackage===0) && phoneNumber && transferImage && data.games[selectedGame].account_type==='Account') {
@@ -136,6 +136,7 @@ price: ${data.games[selectedGame].packages[selectedPackage].price_egp} EGP
     .catch(err => {
       console.error("Error sending to Telegram:", err);
       toast.error("في مشكلة حصلت أثناء استلام الطلب");
+      setsendingLoading(false)
     })
     .finally(() => {
       setsendingLoading(false);
