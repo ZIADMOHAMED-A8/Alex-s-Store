@@ -15,7 +15,7 @@ export default function Herosection() {
             <div className="container {styles.a7a}" id={styles.cont}  style={{display:'flex',justifyContent:'space-between'}}>
                 <div className={styles.halfHero}>
                 <h1>Instant Game Currency Top-ups</h1>
-                <p>Fuel your play with fast ,secure credits for PUBG,Free Fire,CODM and more.</p>
+                <p>Fuel your play with fast ,secure credits for PUBG,Free Fire,TikTok and more.</p>
                 <div className={styles.test}>
                     <span>Fast Delievry</span>
                     <span>Secure Payments</span>
