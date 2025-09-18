@@ -24,7 +24,9 @@ export default function Herosection() {
                 <div className={styles.buttons}>
                     
                     <span>Top-Up Now</span>
-                    <span>View Packages</span>
+                    <span onClick={()=>{
+                    nav('checkout/1/3')
+                  }}>View Packages</span>
 
                     
                 </div>
