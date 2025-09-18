@@ -46,3 +46,16 @@ scroll-snap-align: center;
   width: 100%;
   border-radius: 6px;
 }
+.slide {
+  display: grid;              /* grid أخف من flex في الحالة دي */
+  place-items: center;        /* بتسوي align + justify مع بعض */
+  padding: 10px;              /* مسافة بسيطة حوالين الكارد */
+  height: 100%;               /* عشان يبقى بنفس طول السلايد */
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
+  object-fit: contain;        /* مهم عشان الصورة ما تتقصش */
+}
