@@ -47,7 +47,7 @@ export default function Ratings() {
       <Slider {...settings}>
         {feedbackImages.map((item, i) => (
           <div key={i} className={styles.slide}>
-            <img src={item} alt={`feedback-${i}`} />
+            <img style={{maxWidth:'80%'}} src={item} alt={`feedback-${i}`} />
           </div>
         ))}
       </Slider>
