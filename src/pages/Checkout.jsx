@@ -5,11 +5,15 @@ import { useGetDataQuery } from '../../dataslice';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import ScrollToTop from '../ScrollToTop.jsx'
+import vfCash from '../assets/vf_cash.png'
+import instaPay from '../assets/InstaPay_Logo.png'
+import etislatCash from '../assets/etisalat_cash_logo.png'
+
 function Checkout ()  {
   const [selectedGame, setSelectedGame] = useState();
   const [playerId, setPlayerId] = useState('');
   const [selectedPackage, setSelectedPackage] = useState();
-  const [selectedPayment, setSelectedPayment] = useState('');
+  const [selectedPayment, setSelectedPayment] = useState(1);
   const [phoneNumber, setPhoneNumber] = useState('');
   const [transferImage, setTransferImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
@@ -155,13 +159,17 @@ price: ${data.games[selectedGame].packages[selectedPackage].price_egp} EGP
     return (
       <>
 <ScrollToTop />
-      <div className={styles.container}>
+      <div  className={styles.container}>
       <h1>
-      حول هنا {data.contact.phone} {data.contact.type}     
+      حول هنا {data.contact[selectedPayment].phone} {data.contact[selectedPayment].type}     
       و حط رقم عليه واتساب عشان نكلمك
           
       </h1>
-
+     { [vfCash,instaPay,etislatCash].map((item,index)=>
+      <img onClick={()=>{
+        setSelectedPayment(index)
+      }} style={{width:'150px',cursor:'pointer'}} src={item}></img>
+      )}
       </div>
       <div className={styles.container}>
       
