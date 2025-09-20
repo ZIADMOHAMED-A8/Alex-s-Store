@@ -159,17 +159,19 @@ price: ${data.games[selectedGame].packages[selectedPackage].price_egp} EGP
     return (
       <>
 <ScrollToTop />
-      <div  className={styles.container}>
+      <div style={{flexDirection:'column'}}  className={styles.container}>
       <h1>
       حول هنا {data.contact[selectedPayment].phone} {data.contact[selectedPayment].type}     
       و حط رقم عليه واتساب عشان نكلمك
           
       </h1>
+      <div className={styles.payments} style={{display:'flex',gap:'30px'}}>
      { [vfCash,instaPay,etislatCash].map((item,index)=>
       <img onClick={()=>{
         setSelectedPayment(index)
-      }} style={{width:'150px',cursor:'pointer'}} src={item}></img>
+      }} style={{width:'150px',height:'150px',cursor:'pointer'}} src={item}></img>
       )}
+      </div>
       </div>
       <div className={styles.container}>
       
