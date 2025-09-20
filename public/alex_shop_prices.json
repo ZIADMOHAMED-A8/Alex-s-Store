@@ -1,12 +1,17 @@
 {
   "shop_name": "Alex Shop",
-  "contact": {
-    "phone": "alex1911",
-    "type":  " انستا باي ",
-    
-    "whatsapp": "01142077268",
-    "additional": "01011953862"
+  "contact": [{
+    "phone": "01011953862",
+    "type":  " فودافون كاش " 
   },
+  {
+    "phone": "alex1911",
+    "type":  " انستا باي "
+  },
+  {
+    "phone": "01142077268",
+    "type":  " اتصالات كاش  "
+  }],
   "games": [
     {
       "game_name": "Free Fire",
