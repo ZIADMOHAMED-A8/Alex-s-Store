@@ -1,6 +1,6 @@
 import styles from './Herosection.module.css'
 import pubg from '../assets/pubg.png'
-import cod from '../assets/cod.jpg'
+import cod from '../assets/cod.avif'
 import freefire from '../assets/freefire.png'
  import { useNavigate } from 'react-router-dom';
     
