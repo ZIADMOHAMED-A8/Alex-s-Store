@@ -63,9 +63,9 @@ const handleImageUpload = (e) => {
     setImagePreview(null);
   };
   function sendData(){
-    const botToken='8458939895:AAH5YHvfqg9jrU5J03knoQjr2QKJTjPZ0Eg';
-    const chatId='1385935591';
-    let caption = `Game: ${data.games[selectedGame].game_name}
+  const botToken = import.meta.env.VITE_BOT_TOKEN;
+  const chatId = import.meta.env.VITE_CHAT_ID;
+  let caption = `Game: ${data.games[selectedGame].game_name}
 type: ${data.games[selectedGame].account_type}
 player ID: ${playerId}
 phone number: ${phoneNumber}
