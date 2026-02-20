@@ -65,6 +65,8 @@ const handleImageUpload = (e) => {
   function sendData(){
   const botToken = import.meta.env.VITE_BOT_TOKEN;
   const chatId = import.meta.env.VITE_CHAT_ID;
+    console.log('bot',botToken)
+    console.log('chat',chatId)
   let caption = `Game: ${data.games[selectedGame].game_name}
 type: ${data.games[selectedGame].account_type}
 player ID: ${playerId}
